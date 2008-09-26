@@ -1,0 +1,20 @@
+A small class for generating and validating Universal Product Codes (UPCs),
+the 12 digit codes found on many older US products.
+
+= Usage
+
+  UPC.new("632737715836").valid?
+  => true
+
+  UPC.valid?("632737715836")
+  => true
+
+  UPC.valid?("632737715837")
+  => false
+
+  UPC.check_digit?("63273771583")
+  => 6
+
+= Further Reader
+
+- http://en.wikipedia.org/wiki/Universal_Product_Code
