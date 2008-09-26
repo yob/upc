@@ -7,7 +7,7 @@ require 'rake/gempackagetask'
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/lib'
 
 require 'spec'
-require 'san'
+require 'upc'
 
 desc "Default: run specs"
 task :default => :spec
@@ -23,7 +23,7 @@ end
 desc "Generate documentation for the notamock plugin."
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'SAN'
+  rdoc.title    = 'UPC'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('MIT-LICENSE')
@@ -31,21 +31,21 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-PKG_NAME           = "san"
-PKG_VERSION        = SAN::Version::String
+PKG_NAME           = "upc"
+PKG_VERSION        = UPC::Version::String
 PKG_FILE_NAME      = "#{PKG_NAME}-#{PKG_VERSION}"
-RUBY_FORGE_PROJECT = "san"
+RUBY_FORGE_PROJECT = "yob-projects"
 
 spec = Gem::Specification.new do |s|
   s.name              = PKG_NAME
   s.version           = PKG_VERSION
-  s.summary           = "a (very) small library for working with Standard Address Numbers."
-  s.description       = "a (very) small library for working with Standard Address Numbers."
+  s.summary           = "a (very) small library for working with Universal Product Codes"
+  s.description       = "a (very) small library for working with Universal Product Codes"
   s.author            = "James Healy"
   s.email             = "jimmy@deefa.com"
-  s.homepage          = "http://github.com/yob/san/tree/master"
+  s.homepage          = "http://github.com/yob/upc/tree/master"
   s.has_rdoc          = true
-  s.rdoc_options     << "--title" << "SAN" <<
+  s.rdoc_options     << "--title" << "UPC" <<
                         "--line-numbers"
   s.rubyforge_project = RUBY_FORGE_PROJECT
   s.test_files        = FileList["spec/**/*_spec.rb"]
