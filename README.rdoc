@@ -12,8 +12,11 @@ the 12 digit codes found on many older US products.
   UPC.valid?("632737715837")
   => false
 
-  UPC.check_digit?("63273771583")
-  => 6
+  UPC.complete("63273771583")
+  => "632737715836"
+
+  UPC.new("632737715836").to_ean
+  => "0632737715836"
 
 = Further Reader
 
