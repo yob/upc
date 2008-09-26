@@ -25,6 +25,8 @@ describe "The UPC class" do
   it "should calculate a UPC check digit correctly" do
     UPC.complete("63273771583").should eql("632737715836")
     UPC.complete(63273771583).should   eql("632737715836")
+    UPC.complete("63273720503").should eql("632737205030")
+    UPC.complete("63273712223").should eql("632737122238")
   end
 
   it "should convert to an EAN correctly" do

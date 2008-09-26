@@ -27,7 +27,7 @@ class UPC
     return nil unless eleven.length == 11 && eleven.match(/\d{11}/)
 
     arr = (0..10).to_a.collect do |i|
-      if i.odd?
+      if (i+1).odd?
         eleven[i,1].to_i * 3
       else
         eleven[i,1].to_i
