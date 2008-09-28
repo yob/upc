@@ -1,6 +1,10 @@
 A small class for generating and validating Universal Product Codes (UPCs),
 the 12 digit codes found on many older US products.
 
+= Installation
+
+gem install upc
+
 = Usage
 
   UPC.new("632737715836").valid?
@@ -21,3 +25,8 @@ the 12 digit codes found on many older US products.
 = Further Reader
 
 - http://en.wikipedia.org/wiki/Universal_Product_Code
+
+= Contributing
+
+Source code is publicly available @ http://github.com/yob/upc/tree/master.
+Patches welcome, preferably via a git repo I can pull from.
