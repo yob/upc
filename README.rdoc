@@ -1,6 +1,6 @@
 A small class for generating and validating Universal Product Codes (UPCs),
 the 12 digit codes found on many older US products.
-
+{<img src="https://travis-ci.org/yob/upc.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/yob/upc]
 = Installation
 
 gem install upc
