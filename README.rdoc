@@ -3,7 +3,7 @@ the 12 digit codes found on many older US products.
 {<img src="https://travis-ci.org/yob/upc.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/yob/upc]
 = Installation
 
-gem install upc
+  gem install upc
 
 = Usage
 
@@ -28,5 +28,5 @@ gem install upc
 
 = Contributing
 
-Source code is publicly available @ http://github.com/yob/upc/tree/master.
-Patches welcome, preferably via a git repo I can pull from.
+Source code is publicly available @ http://github.com/yob/upc. Patches
+welcome, preferably via a git repo I can pull from.
