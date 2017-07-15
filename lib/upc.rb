@@ -1,11 +1,11 @@
 class UPC
 
   class Version #:nodoc:
-    Major = 1
-    Minor = 0
-    Tiny  = 0
+    MAJOR = 1
+    MINOR = 0
+    TINY  = 0
 
-    String = [Major, Minor, Tiny].join('.')
+    String = [MAJOR, MINOR, TINY].join('.')
   end
 
   def initialize(str)
@@ -18,7 +18,7 @@ class UPC
 
   def self.valid?(upc)
     upc = upc.to_s
-    upc.length == 12 && upc == UPC.complete(upc[0,11])
+    upc.length == 12 && upc == UPC.complete(upc[0, 11])
   end
 
   # Purely for generating new UPC numbers
@@ -35,17 +35,13 @@ class UPC
     end
     sum = arr.inject { |sum, n| sum + n }
     remainder = sum % 10
-    if remainder == 0
-      check = 0
-    else
-      check = 10 - remainder
-    end
+    (remainder == 0) ? check = 0 : check = 10 - remainder
 
     eleven + check.to_s
   end
 
   def to_ean
-    return nil unless self.valid?
+    return nil unless valid?
     "0#{@number}"
   end
 end
