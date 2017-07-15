@@ -1,0 +1,33 @@
+A small class for generating and validating Universal Product Codes (UPCs),
+the 12 digit codes found on many older US products.
+[![Build Status](https://travis-ci.org/yob/upc.svg?branch=master)](https://travis-ci.org/yob/upc)
+
+# Installation
+
+    gem install upc
+
+# Usage
+
+    UPC.new("632737715836").valid?
+    => true
+
+    UPC.valid?("632737715836")
+    => true
+
+    UPC.valid?("632737715837")
+    => false
+
+    UPC.complete("63273771583")
+    => "632737715836"
+
+    UPC.new("632737715836").to_ean
+    => "0632737715836"
+
+# Further Reader
+
+* http://en.wikipedia.org/wiki/Universal_Product_Code
+
+# Contributing
+
+Source code is publicly available @ http://github.com/yob/upc. Patches
+welcome, preferably via a git repo I can pull from.
