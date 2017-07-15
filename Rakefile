@@ -1,24 +1,22 @@
 require 'rake'
 require 'rubygems'
-require 'spec/rake/spectask'
-require 'rake/rdoctask'
-require 'rake/gempackagetask'
+require 'rdoc/task'
+require 'rubygems/package_task'
 
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/lib'
-
-require 'spec'
 require 'upc'
 
-desc "Default: run specs"
-task :default => :spec
+begin
+  require 'rspec/core/rake_task'
 
-desc "Run all the specs for the notamock plugin."
-Spec::Rake::SpecTask.new do |t|
-  t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts = ['--colour']
-  t.rcov = true
-  t.rcov_opts = ["--exclude \"spec/*,gems/*\""]
+  desc "Run all the specs for the notamock plugin."
+  RSpec::Core::RakeTask.new(:spec)
+
+  task :default => :spec
+rescue LoadError
+  puts "no rspec available"
 end
+
 
 desc "Generate documentation for the notamock plugin."
 Rake::RDocTask.new(:rdoc) do |rdoc|
@@ -45,7 +43,7 @@ spec = Gem::Specification.new do |s|
   s.email             = "jimmy@deefa.com"
   s.homepage          = "http://github.com/yob/upc/tree/master"
   s.has_rdoc          = true
-  s.rdoc_options     << "--title" << "UPC" <<
+  s.rdoc_options      << "--title" << "UPC" <<
                         "--line-numbers"
   s.rubyforge_project = RUBY_FORGE_PROJECT
   s.test_files        = FileList["spec/**/*_spec.rb"]
@@ -57,8 +55,8 @@ spec = Gem::Specification.new do |s|
   ]
 end
 
-Rake::GemPackageTask.new(spec) do |p|
-  p.gem_spec = spec
+Rake::PackageTask.new(spec) do |p|
+  p.version = PKG_VERSION
   p.need_tar = false
   p.need_zip = false
 end
