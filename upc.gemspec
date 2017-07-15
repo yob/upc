@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name = "upc"
-  spec.version = "1.0.0"
+  spec.version = "1.1.0"
   spec.summary = "a (very) small library for working with Universal Product Codes"
   spec.description = "a (very) small library for working with Universal Product Codes"
   spec.license = "MIT"

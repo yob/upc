@@ -1,2 +1,5 @@
+v1.1 (15th July 2017)
+- Adjust to work on all rubies from 1.9 to 2.4 (Todd Baur)
+
 v1.0 (26th September 2008)
 - Initial Release
