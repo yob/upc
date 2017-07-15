@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">=1.9.3"
 
   spec.test_files = Dir.glob("spec/**/*_spec.rb")
-  spec.files = Dir.glob("lib/**/*.rb") + ["MIT-LICENSE", "README.rdoc", "CHANGELOG" ]
+  spec.files = Dir.glob("lib/**/*.rb") + ["MIT-LICENSE", "README.markdown", "CHANGELOG" ]
 
   spec.add_development_dependency("rake")
   spec.add_development_dependency("rspec", "~> 3.0")
