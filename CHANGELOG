@@ -1,3 +1,6 @@
+v1.1.1 (21st July 2018)
+- Enable frozen_string_literal
+
 v1.1 (15th July 2017)
 - Adjust to work on all rubies from 1.9 to 2.4 (Todd Baur)
 
