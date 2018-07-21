@@ -7,7 +7,6 @@ Gem::Specification.new do |spec|
   spec.author = "James Healy"
   spec.email = "jimmy@deefa.com"
   spec.homepage = "http://github.com/yob/upc"
-  spec.has_rdoc = true
   spec.rdoc_options << "--title" << "UPC" << "--line-numbers"
 
   spec.required_ruby_version = ">=1.9.3"
